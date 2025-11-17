@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.path as mpath
 from matplotlib.patches import Circle, Wedge, PathPatch
 
+# Some dummy comment
+
 class Ball:
     def __init__(self, x=0.0, y=0.0, mass=1.0, radius=0.2, v_x=0.0, v_y=0.0, omega = 0.0, color = "red"):
         self.color = color
