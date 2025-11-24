@@ -4,22 +4,17 @@ class World:
     def __init__(self, physics, renderer):
         self.physics = physics
         self.renderer = renderer
-        self.plane = None
         self.objects = []
-        self.time = 0
         self.dt = 0.005
-
-    def set_plane(self, plane):
-        self.plane = plane
 
     def add_object(self, obj):
         self.objects.append(obj)
 
     def step(self, i):
-            self.physics.update(self.objects, self.plane, self.dt)
+            self.physics.update(self.objects, self.dt)
 
             if i % 10 == 0:
-                self.renderer.update(self.objects, self.plane)
+                self.renderer.update(self.objects)
 
             self.time += self.dt
 

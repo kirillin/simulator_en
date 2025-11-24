@@ -5,7 +5,15 @@ class RNEAlgorithm:
     def __init__(self):
         pass
 
+    
+
     def forward_dynamics(self, obj, q, qd, tau_ext, gravity):
+        # O(n^2)
+        # n = 1 -> O(1)
+        # n = 1000 -> O(1_000_000)
+
+        # n = 1000 -> O(1000)
+
         n = obj.n
         G = self._rnea(obj, q, np.zeros(n), np.zeros(n), gravity)
         C = self._rnea(obj, np.zeros(n), qd, np.zeros(n), np.zeros(3))
